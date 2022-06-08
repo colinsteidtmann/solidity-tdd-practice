@@ -16,10 +16,9 @@ const deployFunction: DeployFunction = async ({ getNamedAccounts, deployments })
     : VERIFICATION_BLOCK_CONFIRMATIONS;
 
   log(`----------------------------------------------------`);
-  const message = "Hello, Hardhat!";
-  const greeter = await deploy("Greeter", {
+  const myContract = await deploy("MyContract", {
     from: deployer,
-    args: [message],
+    args: [5],
     log: true,
     waitConfirmations: waitBlockConfirmations,
     skipIfAlreadyDeployed: true,
@@ -28,12 +27,12 @@ const deployFunction: DeployFunction = async ({ getNamedAccounts, deployments })
   // Verify the deployment
   if (!developmentChains.includes(network.name) && process.env.LOCAL_ETHERSCAN_API_KEY) {
     log("Verifying...");
-    await verify(greeter.address, [message]);
+    await verify(myContract.address, [5]);
   }
 
   log("----------------------------------------------------");
 };
 // deployFunction.skip = async (hre) => true;
 export default deployFunction;
-deployFunction.tags = [`all`, `greeter`, `main`];
+deployFunction.tags = [`all`, `myContract`, `main`];
 // tags can be used with hardhat-deploy and hardhat.config to customize things

@@ -1,0 +1,15 @@
+[
+  "constructor(uint256)",
+  "function constantString() view returns (string)",
+  "function contractAddress() view returns (address)",
+  "function count() view returns (uint256)",
+  "function getNum() view returns (uint256)",
+  "function globalTimestamp() view returns (uint256)",
+  "function immutableUint() view returns (uint256)",
+  "function loop()",
+  "function saveNothing()",
+  "function setNum(uint256)",
+  "function signedInt() view returns (int256)",
+  "function trueBoolean() view returns (bool)",
+  "function unsignedInt() view returns (uint256)"
+]
